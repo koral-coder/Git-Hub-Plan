@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Open Sans", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  direction: rtl;
+  background: linear-gradient(rgba(17, 12, 12, 0.62), rgba(17, 12, 12, 0.62)), url('./assets/images/desert_cactus_bg_1781948450465.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #1f2937; /* Dark charcoal text inside transparent glass components for peak readability */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom gorgeous background with floating dreamy circles and generated image with dark overlay layers */
+.bg-dreamy-gradient {
+  background: linear-gradient(rgba(17, 12, 12, 0.62), rgba(17, 12, 12, 0.62)), url('./assets/images/desert_cactus_bg_1781948450465.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-dreamy-gradient::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, rgba(236, 72, 153, 0) 70%);
+  top: -100px;
+  left: -100px;
+  filter: blur(120px);
+  animation: float-slow 22s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+.bg-dreamy-gradient::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, rgba(251, 191, 36, 0) 70%);
+  bottom: -100px;
+  right: -100px;
+  filter: blur(150px);
+  animation: float-slow-reverse 28s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+.floating-circle-3 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, rgba(236, 72, 153, 0) 70%);
+  top: 40%;
+  left: 20%;
+  filter: blur(110px);
+  animation: float-medium 20s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(60px, 40px) scale(1.1);
+  }
+}
+
+@keyframes float-slow-reverse {
+  0% {
+    transform: translate(0, 0) scale(1.05);
+  }
+  100% {
+    transform: translate(-70px, -60px) scale(0.95);
+  }
+}
+
+@keyframes float-medium {
+  0% {
+    transform: translate(0, 0) scale(0.9);
+  }
+  100% {
+    transform: translate(-40px, 50px) scale(1.08);
+  }
+}
+
+/* Glassmorphism Classes customized for extreme legibility with slightly more opaque overlays to let content pop */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 32px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+.glass-panel-heavy {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 48px;
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.25);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 9999px;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.06);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 14px;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(236, 72, 153, 0.6); /* elegant soft pink border focus */
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.15);
+}
+
+/* Hide scrollbars but keep scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Smooth range transitions */
+.transition-all-custom {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

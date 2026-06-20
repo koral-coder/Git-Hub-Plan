@@ -1,0 +1,6 @@
+{
+  "name": "DancerPay",
+  "description": "מעקב הכנסות מהופעות ושיעורים, ומעקב הוצאות עסקיות עבור רקדנית עצמאית פיננסית.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
